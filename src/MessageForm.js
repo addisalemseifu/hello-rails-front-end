@@ -9,17 +9,17 @@ function MessageForm() {
     fetch('/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text })
+      body: JSON.stringify({ text }),
     })
-      .then(response => response.json())
-      .then(data => console.log(data));
+      .then((response) => response.json())
+      .then((data) => console.log(data));
 
     setText('');
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={text} onChange={event => setText(event.target.value)} />
+      <input type="text" value={text} onChange={(event) => setText(event.target.value)} />
       <button type="submit">Send</button>
     </form>
   );
